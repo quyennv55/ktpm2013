@@ -9,11 +9,11 @@ import math
 
 def checkInput(a,b,c):
     if( type(a) in [int, float, long] and type(b) in [float, int, long] and type(c) in [float, int, long]) and checkDoiman(a,b,c):
-        return 1;
+        return 1
     elif a is None or b is None or c is None:
-        return 0;
+        return 0
     else:
-        return 0;       
+        return 0     
 #Kiem tra dau vao cua 3 canh
 def checkDoiman(a,b,c):
         if (a <= 0) or (a > (2**32 - 1)) :
@@ -51,8 +51,8 @@ def checkVuong(a,b,c):
             return 0
 #Kiem tra xem tam giac co vuong can ko
 def checkVuongCan(a,b,c):
-    if checkCan(a,b,c):
-        if checkVuong(a,b,c):
+    if checkVuong(a,b,c):
+        if checkCan(a,b,c):
             return 1;
         else:
             return 0;
@@ -62,6 +62,8 @@ def detect_triangle(a,b,c):
             if checkTriangle(a,b,c):
                 if checkDeu(a,b,c):
                     return "Tam giac deu"
+                elif checkVuongCan(a,b,c):
+                    return "Tam giac vuong can"
                 elif checkCan(a,b,c):
                     return "Tam giac can"
                 elif checkVuong(a,b,c):
