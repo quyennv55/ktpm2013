@@ -43,7 +43,7 @@ def checkCan(a,b,c):
             return 0
 #Kiem tra xem tam giac co vuong ko hay
 def checkVuong(a,b,c):
-        if math.fabs(a**2 - b**2 - c**2) <= 10**-9 or math.fabs(b**2 - a**2 - c**2) <= 10**-9 or math.fabs(c**2 - b**2 - a**2) <= 10**-9:
+        if math.fabs(a**2 - b**2 - c**2) < 10**-9 or math.fabs(b**2 - a**2 - c**2) < 10**-9 or math.fabs(c**2 - b**2 - a**2) < 10**-9:
             return 1
         else:
             return 0
