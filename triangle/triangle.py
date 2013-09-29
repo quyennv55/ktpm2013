@@ -1,6 +1,4 @@
 '''
-Created on Sep 17, 2013
-Test for Triangle
 @author: Nguyen Van Quyen
 Class: K55CLC
 MSV: 10020280

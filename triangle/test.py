@@ -1,3 +1,8 @@
+'''
+@author: Nguyen Van Quyen
+Class: K55CLC
+MSV: 10020280
+'''
 import unittest
 import decimal
 import math
@@ -45,10 +50,10 @@ class Test(unittest.TestCase):
         self.assertEquals(detect_triangle(3,3,1),"Tam giac can")
     def test_checkTriangle_16(self):
         self.assertEquals(detect_triangle(2**32 -1 ,3, 2**32 -1),"Tam giac can")
-        '''
+    
     def test_checkTriangle_17(self):
-        self.assertEquals(detect_triangle(2**32-1, 10**(-9), 2**32 -1),"Tam giac can")
-        '''
+        self.assertEquals(detect_triangle(2**32-1, decimal.Decimal('10')**(-9), 2**32 -1),"Tam giac can")
+        
     # Kiem tra tam giac vuong
     def test_checkTriangle_18(self):
         self.assertEquals(detect_triangle(3,4,5),"Tam giac vuong")
@@ -64,45 +69,6 @@ class Test(unittest.TestCase):
         self.assertEquals(detect_triangle(10**-9, 10**-9, 10**-9),"Tam giac deu")
     def test_checkTriangle_23(self):
         self.assertEquals(detect_triangle(2**32 -1 ,2**32 -1, 2**32 -1),"Tam giac deu")
-    '''
-    def test_checkTriangle_24(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    # Kiem tra tam giac can co 2 canh cuc be
-    def test_checkTriangle_25(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_26(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_27(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    # Kiem tra tam giac can co 2 canh cuc lon
-    def test_checkTriangle_28(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_29(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_30(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    # Kiem tra tam giac deu
-    def test_checkTriangle_31(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_32(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_33(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    # Kiem tra tam giac deu co canh vo cung be
-    def test_checkTriangle_34(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_35(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_36(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    # Kiem tra tam giac vuong can
-    def test_checkTriangle_37(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_38(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    def test_checkTriangle_39(self):
-        self.assertEquals(detect_triangle("",2,3),"Error")
-    '''
 def main():
     unittest.main()
     
