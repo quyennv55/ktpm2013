@@ -1,0 +1,25 @@
+﻿*** Settings ***
+Resource	resource.txt
+
+*** Test Cases ***
+Đăng nhập
+	Đăng nhập vào hệ thống
+	Điền tài khoản  quynt
+	Điền mật khẩu  kiemthu3
+	Kích chọn button đăng nhập
+Thêm lớp học mới
+	Chọn chức năng lớp học
+	Kích chọn chức năng thêm lớp mới
+	Điền tên lớp  	12 C
+	Chọn phân ban  KHTN
+	Chọn giáo viên chủ nhiệm  3450
+	Kích chọn button thêm
+	Location Should Be   http://${HOST}${CLASS URL}
+	
+Thêm lớp học mới [Không có giáo viên chủ nhiệm]
+	Kích chọn chức năng thêm lớp mới
+	Điền tên lớp   12 G
+	Chọn phân ban  KHTN
+	Chọn giáo viên chủ nhiệm   ${EMPTY}
+	Kích chọn button thêm
+	Location Should Be   http://${HOST}${CLASS URL}

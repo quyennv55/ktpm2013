@@ -1,0 +1,49 @@
+﻿*** Settings ***
+Library			 Selenium2Library
+
+*** Variables ***
+
+${BROWSER}       ff
+${HOST}          truongnha.com
+${DELAY} 		 1
+${LOGIN URL}     http://${HOST}/login/
+${WELCOME URL}   http://${HOST}/school/
+${CLASS URL}     /school/classes
+${ADDCLASS URL}	 /school/addclass
+
+
+*** Keywords ***
+Đăng nhập vào hệ thống
+	Open Browser  ${LOGIN URL}  ${BROWSER}
+	Set Selenium Timeout  10
+	Maximize Browser Window
+	Set Selenium Speed  ${DELAY} 
+	
+Điền tài khoản  [Arguments]  ${username}
+	Input Text  id_username  ${username}
+	
+Điền mật khẩu  [Arguments]  ${password}
+	Input Text  id_password  ${password}
+	
+Kích chọn button đăng nhập	
+	Click Button  login
+	
+Chọn chức năng lớp học
+	Click Link  ${CLASS URL}
+	
+Kích chọn chức năng thêm lớp mới
+	Click Link	${ADDCLASS URL}
+	
+Điền tên lớp  [Arguments]  ${class name}
+	Input Text  id_name  ${class name}
+	
+Chọn phân ban	[Arguments]  ${phân ban}
+	Select From List  id_phan_ban  ${phân ban}
+	
+Chọn giáo viên chủ nhiệm  [Arguments]  ${giáo viên}
+	Select From List  id_teacher_id  ${giáo viên}
+
+Kích chọn button thêm
+	Click Button  submit
+	
+	
